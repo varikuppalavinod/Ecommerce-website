@@ -1,11 +1,21 @@
-
-import React from "react";
+import Cart from "./Components/Cart/Cart"
+import React,{useState} from "react";
 import Productsscreen from "./Components/Layout/Productsscreen";
-function App() {
+const App=()=> {
+
+const[showcart,setshowcart]=useState(false)
+
+const showcarthandler=()=>{
+    setshowcart(true)
+}
+const hidecarthandler=()=>{
+        setshowcart(false)
+}
   return(
     <div>
     <div>
-      <Productsscreen/>
+     {showcart&&<Cart onClose={hidecarthandler}/>}
+      <Productsscreen onShowCart={showcarthandler}/>
     </div>
     </div>
   )

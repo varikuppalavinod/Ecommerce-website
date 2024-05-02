@@ -74,7 +74,7 @@ const productsArr = [
   },
 ];
 
-const Productsscreen = () => {
+const Productsscreen = (props) => {
   const products = productsArr.map((item, index) => (
     <Col key={index} md={6} className="text-center mb-4 mt-4">
       <div><h3>{item.title}</h3></div>
@@ -89,7 +89,7 @@ const Productsscreen = () => {
 
   return (
     <div>
-      <Header />
+      <Header  onClick={props.onShowCart}/>
       <Container>
         <Row>
           {products}
