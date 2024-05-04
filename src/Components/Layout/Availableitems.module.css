@@ -1,0 +1,21 @@
+
+.grid {
+    display: grid;
+    margin-left:15rem;
+    margin-top:5rem;
+    grid-template-columns:50% 50%; /* Two columns */
+    grid-template-rows:60% 60%;
+     /* Gap between grid items */
+  }
+  .music{
+    text-align:center;
+  }
+  footer{
+    margin-top:10rem;
+    padding:3rem;
+    background-color:rgb(116, 225, 225);
+    color:white;
+  }
+  
+  /* Add more styling as needed */
+  

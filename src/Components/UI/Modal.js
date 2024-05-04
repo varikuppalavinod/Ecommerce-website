@@ -19,13 +19,19 @@ const Modal=(props)=>{
 }
 export default Modal
 */
+
 import {Button} from 'react-bootstrap'
 import React from "react";
 import ReactDOM from "react-dom";
 import classes from "./Modal.module.css";
+import {useContext} from "react"
+import cartcontext from "../Store/cart-context"
 
 
 const ModalOverlay = (props) => {
+  const cartctx=useContext(cartcontext)
+  console.log("this is modal",cartctx)
+  const totalamount=cartctx.totalAmount
   return (
     <div className={classes.modal}>
       <div className={classes.content}>
@@ -40,7 +46,7 @@ const ModalOverlay = (props) => {
         {props.children}
       </div>
       <div>
-      <h2 style={{position:"absolute",right:"60px",fontStyle:""}}>Total :$200</h2>
+      <h2 style={{position:"absolute",right:"60px",fontStyle:""}}>Total :${totalamount}</h2>
       </div>
       <div style={{display:"flex",justifyContent:"center",marginTop:"70px"}}>
       <Button variant="info">PURCHASE</Button>

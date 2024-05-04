@@ -1,5 +1,8 @@
+import {useContext} from "react"
 import Cartitems from "./Cartitems"
 import Modal from "../UI/Modal"
+import cartcontext from "../Store/cart-context"
+/*
 const cartElements = [
     {
     id:"1",
@@ -23,15 +26,23 @@ const cartElements = [
     quantity: 1,
     }
     ]
-   const cartlist=cartElements.map((items)=><Cartitems 
-     key={items.id}
-     title={items.title}
-     price={items.price}
-     image={<img src={items.imageUrl} alt="itemimage"/>}
-     quantity={items.quantity}></Cartitems>)
+
+   // const cartctx=useContext(cartcontext)
+    //console.log(cartctx)
+ */
     
    
     const Cart=(props)=>{
+        const cartctx=useContext(cartcontext)
+        console.log("this is cart",cartctx)
+        
+        const cartlist=cartctx.items.map((items)=><Cartitems 
+        key={items.id}
+        title={items.name}
+        price={items.price}
+        quantity={items.amount}
+        image={<img src={items.image} alt="itemimage"/>}
+       ></Cartitems>)
         return(
             <Modal onClick={props.onClose}>
             {cartlist}
@@ -39,3 +50,5 @@ const cartElements = [
         )
     }
     export default Cart
+
+    

@@ -1,6 +1,7 @@
 import Cart from "./Components/Cart/Cart"
 import React,{useState} from "react";
-import Productsscreen from "./Components/Layout/Productsscreen";
+import Availableitems from "./Components/Layout/Availableitems";
+import Cartprovider from "./Components/Store/Cartprovider"
 const App=()=> {
 
 const[showcart,setshowcart]=useState(false)
@@ -12,12 +13,12 @@ const hidecarthandler=()=>{
         setshowcart(false)
 }
   return(
-    <div>
-    <div>
+    
+    < Cartprovider>
      {showcart&&<Cart onClose={hidecarthandler}/>}
-      <Productsscreen onShowCart={showcarthandler}/>
-    </div>
-    </div>
+      <Availableitems onShowCart={showcarthandler}/>
+    </ Cartprovider>
+    
   )
 }
 export default App;
