@@ -2,6 +2,7 @@ import {useContext} from "react"
 import Cartitems from "./Cartitems"
 import Modal from "../UI/Modal"
 import cartcontext from "../Store/cart-context"
+
 /*
 const cartElements = [
     {
@@ -44,9 +45,12 @@ const cartElements = [
         image={<img src={items.image} alt="itemimage"/>}
        ></Cartitems>)
         return(
+            <div>
             <Modal onClick={props.onClose}>
             {cartlist}
          </Modal>
+         
+         </div>
         )
     }
     export default Cart

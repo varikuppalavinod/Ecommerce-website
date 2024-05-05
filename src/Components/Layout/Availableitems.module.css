@@ -2,20 +2,31 @@
 .grid {
     display: grid;
     margin-left:15rem;
-    margin-top:5rem;
+    margin-top:2rem;
     grid-template-columns:50% 50%; /* Two columns */
     grid-template-rows:60% 60%;
      /* Gap between grid items */
   }
   .music{
     text-align:center;
+    padding-top:3rem;
   }
   footer{
     margin-top:10rem;
     padding:3rem;
-    background-color:rgb(116, 225, 225);
-    color:white;
+    background-color:aqua;
+    color:black;
   }
+  .generics{
+    background-color:aqua;
+    padding:5rem;
+    color:black;
+    padding-top:120px;
+    width:100%;
+    text-align:center;
+    align-items:center;
+    
+}
   
   /* Add more styling as needed */
   

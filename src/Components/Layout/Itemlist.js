@@ -2,6 +2,7 @@ import {useContext} from "react"
 import ItemForm from "./ItemForm"
 //import {Button} from 'react-bootstrap'
 //import classes from"./Items.module.css"
+//import classes from "./Header.module.css"
 import cartcontext from "../Store/cart-context"
 const Itemlist=(props)=>{
     const cartctx=useContext(cartcontext)
@@ -18,8 +19,7 @@ const Itemlist=(props)=>{
     }
  return(
     <div>
-       
-        <div>{props.title}</div>
+        <div><h4>{props.title}</h4></div>
         <div><img src={props.image} alt={props.title}/></div>
         <div>{props.price}</div>
        

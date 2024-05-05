@@ -1,0 +1,27 @@
+.header{
+    background-color:black;
+    padding:20px;
+    color:white;
+    display:flex;
+    justify-content:space-between;
+    text-align:center;
+    position:fixed;
+    width:100%
+
+}
+
+.menu{
+    
+    align-items:center;
+    display:flex;
+    flex-grow:1;
+    justify-content:center;
+    gap:30px;
+    font-weight:bold;
+}
+
+.header button{
+    border-radius:10px;
+    font-weight:bold;
+    background-color:aqua
+}

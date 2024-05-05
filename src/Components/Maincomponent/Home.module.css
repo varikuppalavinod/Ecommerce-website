@@ -1,0 +1,71 @@
+
+.home{
+    padding-top:9rem;
+    padding-bottom:5rem;
+    background-color:rgb(116, 123, 123);
+    text-align:center;
+    color:white;
+    
+}
+.album{
+    background-color:aqua; /* Green background */
+    padding: 2px 4px; /* Padding around text */
+    text-align: center; /* Center text */ 
+    display: inline-block; /* Display as inline block */
+    margin: 4px 2px; /* Margin around button */  
+    margin-top:3rem;
+    margin-bottom:3rem;
+}
+.image img{
+    width:100px;
+    height:100px;
+    
+}
+
+.tour{
+    text-align:center;
+    margin-top:20px;
+}
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        margin-left:10rem;
+        margin-right:10rem;
+      }
+      
+      .row {
+        display: flex;
+        justify-content: space-between; /* Adjust as needed */
+        
+      }
+      
+      .col {
+    
+        flex: 1;
+       margin-right:0;
+       margin-left:0;
+        padding: 10px; /* Adjust padding as needed */
+        font-weight:bold;
+        
+
+        border: none;
+        border-bottom: 2px solid black; /* Adjust the border properties as needed */ 
+      }
+
+      .container button{
+        background-color:rgb(55, 181, 181);
+        border:none;
+        color:white;
+        font-size:20px
+      }
+
+      .generics{
+        text-align:center;
+        display:flex;
+        padding:3rem;
+        background-color:aqua;
+        padding-left:15rem;
+        margin-top:5rem;
+    
+    }
