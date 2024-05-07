@@ -1,3 +1,4 @@
+/*
 import React, { useState, useEffect } from 'react';
 import MovieList from './Components/MovieList';
 import './App.css';
@@ -64,15 +65,16 @@ function App() {
 
 export default App;
 
+*/
 
 
 
-/*
 
 //using async await
 import React,{useState} from 'react';
 
 import MovieList from './Components/MovieList';
+import Form from "./Components/Form"
 import './App.css';
 
 function App() {
@@ -113,6 +115,10 @@ function App() {
   return (
     <React.Fragment>
       <section>
+      <Form/>
+      </section>
+      <section>
+       
         <button onClick={fetchmoviehandler}>Fetch Movies</button>
       </section>
       <section>
