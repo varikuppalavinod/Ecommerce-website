@@ -41,7 +41,7 @@ function App() {
     setRetryInterval(null);
   }
 
-  // UseEffect to start fetching movies on initial render
+  // UseEffect to start fetching movies on initial render without fetch click
   useEffect(() => {
     fetchMovieHandler();
   }, []);
