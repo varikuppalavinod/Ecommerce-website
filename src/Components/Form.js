@@ -1,6 +1,6 @@
 import classes from "./Form.module.css"
 import {useState} from "react"
-const Form=()=>{
+const Form=(props)=>{
     const[form,setform]=useState({
         title:"",
         openingtext:"",
@@ -12,9 +12,9 @@ const Form=()=>{
         title:form.title,
         openingtext:form.openingtext,
         releasedate:form.releasedate,
-        id:Math.random()
+        
       }
-      console.log(formdata)
+      props.onaddmovie(formdata)
     
     setform({
         title:"",

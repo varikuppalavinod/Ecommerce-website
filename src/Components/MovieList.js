@@ -6,17 +6,25 @@ import classes from './MovieList.module.css';
 
 
 const MovieList = (props) => {
+
+  const handleDelete = (id) => {
+    props.onDelete(id); // Pass the id to the onDelete function provided by the parent component
+  };
     return (
-      <ul className={classes['movies-list']}>
+      <div className={classes['movies-list']}>
         {props.movies.map((movie) => (
+          <div key={movie.id}>
           <Movie
-            key={movie.id}
+           // id={movie.id}
             title={movie.title}
-            releaseDate={movie.releaseDate}
-            openingText={movie.openingText}
+            releaseDate={movie.releasedate}
+            openingText={movie.openingtext}
           />
+          <button onClick={() => handleDelete(movie.id)}>Delete</button>
+          </div>
+          
         ))}
-      </ul>
+      </div>
     );
   };
   
