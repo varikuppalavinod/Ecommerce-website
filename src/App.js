@@ -4,6 +4,7 @@ import Login from "./Components/Login"
 import Orders from "./Components/Orders"
 import Profile from "./Components/Profile"
 import  "./App.css"
+import Error from "./Components/Error"
 import{BrowserRouter,Routes,Route,Link} from "react-router-dom"
 
 const App=()=>{
@@ -26,6 +27,7 @@ const App=()=>{
     
     <Route path="/about" element={<About/>}/>
     <Route path="/login" element={<Login/>}/>
+    <Route path="*" element={<Error/>}/>
    </Routes>
    
    </BrowserRouter>
