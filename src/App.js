@@ -1,36 +1,52 @@
-import Home from "./Components/Home"
-import About from "./Components/About"
-import Login from "./Components/Login"
-import Orders from "./Components/Orders"
-import Profile from "./Components/Profile"
-import  "./App.css"
-import Error from "./Components/Error"
-import{BrowserRouter,Routes,Route,Link} from "react-router-dom"
+/*
+import { BrowserRouter,Routes, Route } from 'react-router-dom';
+import Layout from './Components/Layout/Layout';
+import UserProfile from './Components/Profile/UserProfile';
+import AuthPage from './Pages/AuthPage';
+import HomePage from './Pages/HomePage';
 
-const App=()=>{
-//routing concept
-  return(
-   <BrowserRouter>
-   <div className="app">
-    <Link to="/" className="link">Home</Link>
-    <Link to="/about" className="link">About</Link>
-    <Link to="/login" className="link">Login</Link>
-   </div>
-
-   <Routes>
-    <Route path="/" element={<Home/>}>
-      <Route path="orders" element={<Orders/>}/>
-      <Route path="profile" element={<Profile/>}/>
-
-    </Route>
-
-    
-    <Route path="/about" element={<About/>}/>
-    <Route path="/login" element={<Login/>}/>
-    <Route path="*" element={<Error/>}/>
-   </Routes>
-   
-   </BrowserRouter>
-  )
+function App() {
+  return (
+    <Layout>
+      <BrowserRouter>
+      <Routes>
+        <Route path='/' exact>
+          <HomePage />
+        </Route>
+        <Route path='/auth'>
+          <AuthPage />
+        </Route>
+        <Route path='/profile'>
+          <UserProfile />
+        </Route>
+        </Routes>
+        </BrowserRouter>
+    </Layout>
+  );
 }
-export default App
+
+export default App;
+
+*/
+
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Layout from './Components/Layout/Layout';
+import UserProfile from './Components/Profile/UserProfile';
+import AuthPage from './Pages/AuthPage';
+import HomePage from './Pages/HomePage';
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Layout>
+        <Routes>
+          <Route path='/' element={<HomePage />} />
+          <Route path='/auth' element={<AuthPage />} />
+          <Route path='/profile' element={<UserProfile />} />
+        </Routes>
+      </Layout>
+    </BrowserRouter>
+  );
+}
+
+export default App;
