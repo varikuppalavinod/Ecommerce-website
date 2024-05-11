@@ -7,6 +7,7 @@
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
     padding: 1rem;
     text-align: center;
+    color:white;
   }
   
   .auth h1 {
@@ -64,6 +65,7 @@
     color: #9f5ccc;
     border: none;
     padding: 0.15rem 1.5rem;
+    
   }
   
   .actions .toggle:hover {
