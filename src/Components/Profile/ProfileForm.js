@@ -1,9 +1,12 @@
 import {useRef,useContext} from "react"
 import classes from './ProfileForm.module.css';
 import Authcontext from "../store/Authcontext"
+import{useNavigate} from "react-router-dom"
 const ProfileForm = () => {
  const authctx=useContext(Authcontext)
   const newPasswordInputRef=useRef()
+
+  const navigate=useNavigate();
   
   const submitHandler=(event)=>{
       event.preventDefault()
@@ -23,6 +26,7 @@ const ProfileForm = () => {
         }
       }).then(res=>{
      //always succeed
+     navigate("/")  //navigate the path after password changed
       
       })
   }

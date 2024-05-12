@@ -4,8 +4,11 @@
 import { useState, useRef,useContext } from 'react';
 import classes from './AuthForm.module.css';
 import authcontext from "../store/Authcontext"
+import {useNavigate} from "react-router-dom"
 
 const AuthForm = () => {
+  
+  
   const [isLogin, setIsLogin] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
   const emailInputRef = useRef();
@@ -13,6 +16,9 @@ const AuthForm = () => {
 
   const authctx=useContext(authcontext)
   console.log("this is authform",authctx)
+
+  const navigate=useNavigate()
+  console.log(navigate)
 
   const switchAuthModeHandler = () => {
     setIsLogin(prevState => !prevState);
@@ -58,6 +64,8 @@ const AuthForm = () => {
     .then(data => {
 
       authctx.login(data.idToken)
+      navigate("/")              //navigate path is changed after login 
+      
      // console.log(data); // Assuming your backend returns a token
       setIsLoading(false);
     })
