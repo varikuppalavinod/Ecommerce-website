@@ -1,14 +1,18 @@
 //implementing login using firebase
+//using context api managed tokens
 
-
-import { useState, useRef } from 'react';
+import { useState, useRef,useContext } from 'react';
 import classes from './AuthForm.module.css';
+import authcontext from "../store/Authcontext"
 
 const AuthForm = () => {
   const [isLogin, setIsLogin] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
   const emailInputRef = useRef();
   const passwordInputRef = useRef();
+
+  const authctx=useContext(authcontext)
+  console.log("this is authform",authctx)
 
   const switchAuthModeHandler = () => {
     setIsLogin(prevState => !prevState);
@@ -52,7 +56,9 @@ const AuthForm = () => {
       return res.json();
     })
     .then(data => {
-      console.log(data); // Assuming your backend returns a token
+
+      authctx.login(data.idToken)
+     // console.log(data); // Assuming your backend returns a token
       setIsLoading(false);
     })
     .catch(error => {
