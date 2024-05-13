@@ -11,6 +11,7 @@ const MainNavigation = () => {
 
   const logouthandler=()=>{
     authctx.logout()
+    
     //redirect the user to login page
   }
   return (
