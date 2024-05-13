@@ -11,7 +11,7 @@ const MainNavigation = () => {
 
   const logouthandler=()=>{
     authctx.logout()
-    //redirect the user
+    //redirect the user to login page
   }
   return (
     <header className={classes.header}>

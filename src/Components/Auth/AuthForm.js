@@ -18,7 +18,7 @@ const AuthForm = () => {
   console.log("this is authform",authctx)
 
   const navigate=useNavigate()
-  console.log(navigate)
+//  console.log(navigate)
 
   const switchAuthModeHandler = () => {
     setIsLogin(prevState => !prevState);
