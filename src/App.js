@@ -26,13 +26,14 @@ const App = () => {
   };
 
   return (
-    
+    // protection aplied here means without login not able the see the products
     <BrowserRouter>
       <Header onShowCart={showCartHandler}  />
       <Routes>
-      {isLoggedIn && <Route path="/" element={<Store onCloseCart={hideCartHandler} cartItems={showCart}/>} />}
-       {isLoggedIn && <Route path="/home" element={<Home  />}/>}
-       {isLoggedIn && <Route path="/about" element={<About />}/>}
+      {isLoggedIn && <Route path="/" element=                           // protection aplied here
+      {<Store onCloseCart={hideCartHandler} cartItems={showCart}/>} />}   
+       {isLoggedIn && <Route path="/home" element={<Home  />}/>}        
+       {isLoggedIn && <Route path="/about" element={<About />}/>}          
         <Route path="/login" element={<Authform/>}/>
         <Route path="*" element={<Navigate to ="/login"/>}/>
       </Routes>
