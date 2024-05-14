@@ -3,7 +3,7 @@ const ItemForm=(props)=>{
   const submithandler=(event)=>{
     event.preventDefault()
     props.onAddToCart(1)
-    console.log("this is itemform")
+   // console.log("this is itemform")
   }
   return(
     <form onSubmit={submithandler}>

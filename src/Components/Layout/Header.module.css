@@ -1,27 +1,44 @@
 .header{
+    
     background-color:black;
-    padding:20px;
-    color:white;
+    padding:50px;
+    
     display:flex;
-    justify-content:space-between;
+    justify-content:center;
     text-align:center;
     position:fixed;
-    width:100%
-
+    width:100%;
+    align-items: center;
 }
 
 .menu{
-    
+    position:absolute;
+    justify-content:center;
     align-items:center;
     display:flex;
     flex-grow:1;
     justify-content:center;
     gap:30px;
     font-weight:bold;
+    
 }
 
-.header button{
-    border-radius:10px;
+.lagoutbutton{
+    position:absolute;
+    right:7rem;
+    border-radius:5px;
     font-weight:bold;
-    background-color:aqua
+    background-color:aqua;
+    top:35px;
+
+}
+
+.cartbutton{
+    position:absolute;
+    right:16px;
+    top:35px;
+    border-radius:5px;
+    background-color: aqua;
+    font-weight:bold;
+    
 }

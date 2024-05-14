@@ -6,7 +6,7 @@ import ItemForm from "./ItemForm"
 import cartcontext from "../Store/cart-context"
 const Itemlist=(props)=>{
     const cartctx=useContext(cartcontext)
-    console.log("this is itemlist",cartctx)
+   // console.log("this is itemlist",cartctx)
     const addToCartHandler=(amount)=>{
         cartctx.additem({
             id:props.id,

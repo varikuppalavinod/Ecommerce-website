@@ -1,14 +1,20 @@
-// App.js
-import React, { useState } from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import{useContext} from "react"
+import React, { useState} from "react";
+import { BrowserRouter, Route, Routes,Navigate } from "react-router-dom";
 import Home from "./Components/Maincomponent/Home";
 import About from "./Components/Maincomponent/About";
 import Store from "./Components/Maincomponent/Store";
 import Header from "./Components/Layout/Header";
-import Cartprovider from "./Components/Store/Cartprovider";
+import Authform from "./Components/Auth/Authform";
+import cartcontext from "./Components/Store/cart-context"
+
 
 
 const App = () => {
+  const cartctx=useContext(cartcontext)
+  console.log("this is app js",cartctx)
+  const isLoggedIn=cartctx.isLoggedIn
+  console.log(isLoggedIn)
   const [showCart, setShowCart] = useState(false);
 
   const showCartHandler = () => {
@@ -20,16 +26,18 @@ const App = () => {
   };
 
   return (
-    <Cartprovider>
+    
     <BrowserRouter>
       <Header onShowCart={showCartHandler}  />
       <Routes>
-        <Route path="/" element={<Store onCloseCart={hideCartHandler} cartItems={showCart}/>} />
-        <Route path="/home" element={<Home  />} />
-        <Route path="/about" element={<About />} />
+      {isLoggedIn && <Route path="/" element={<Store onCloseCart={hideCartHandler} cartItems={showCart}/>} />}
+       {isLoggedIn && <Route path="/home" element={<Home  />}/>}
+       {isLoggedIn && <Route path="/about" element={<About />}/>}
+        <Route path="/login" element={<Authform/>}/>
+        <Route path="*" element={<Navigate to ="/login"/>}/>
       </Routes>
     </BrowserRouter>
-    </Cartprovider>
+    
   );
 };
 
@@ -87,4 +95,14 @@ const hidecarthandler=()=>{
   )
 }
 export default App;
+/*
+import AlertExample from "./Practice/AlertExample"
+const App=()=>{
+  return(
+    <div>
+      <AlertExample/>
+    </div>
+  )
+}
+export default App
 */

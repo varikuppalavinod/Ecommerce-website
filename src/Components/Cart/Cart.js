@@ -39,10 +39,12 @@ const cartElements = [
         
         const cartlist=cartctx.items.map((items)=><Cartitems 
         key={items.id}
+        id={items.id}
         title={items.name}
         price={items.price}
         quantity={items.amount}
         image={<img src={items.image} alt="itemimage"/>}
+        
        ></Cartitems>)
         return(
             <div>

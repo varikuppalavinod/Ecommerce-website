@@ -1,0 +1,32 @@
+.auth{
+    padding-top:6rem;
+}
+.authbody{
+    margin:3rem auto;
+    width:95%;
+    max-width:25rem;
+    border-radius:6px;
+    background-color:rgb(76, 6, 141);
+    text-align:center;
+    padding:1rem;
+    display:block;
+    color:white;
+    font-family:Times New Roman, Times, serif;
+}
+.authbody input{
+    width:100%;
+}
+.button{
+    margin-top:15px;
+    background-color:rgb(159, 84, 230);
+    color:white;
+    border-radius:5px;
+    width:8rem;
+    border:1px solid #95fccc;
+}
+.button2{
+    border:none;
+    background:none;
+    color:white;
+    margin-top:20px;
+}

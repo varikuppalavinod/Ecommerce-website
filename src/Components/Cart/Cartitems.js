@@ -1,26 +1,13 @@
-//import Modal from "../UI/Modal"
-/*
-import {Button,Container,Row,Col} from 'react-bootstrap'
-const Cartitems=(props)=>{
-    return(
-
-        <Container>
-      <Row>
-        <Col> {props.image}
-        {props.title}</Col>
-        <Col style={{marginLeft:"7rem"}}> {props.price}</Col>
-        <Col style={{marginLeft:"5rem"}}> {props.quantity}
-        <Button variant="info">REMOVE</Button></Col>
-      </Row>
-    </Container>
-      
-    )
-}
-export default Cartitems
-*/
+import {useContext} from "react"
+import cartcontext from "../Store/cart-context"
 import{Button} from "react-bootstrap"
 import classes from "./Cartitems.module.css"
 const Cartitems=(props)=>{
+  const cartctx=useContext(cartcontext)
+
+  const removehandler=(id)=>{
+    cartctx.removeitem(props.id)
+  }
   return(
 
     <div className={classes.container}>
@@ -32,7 +19,7 @@ const Cartitems=(props)=>{
       <div className={classes.col}>{props.price}</div>
      <div >
       {props.quantity}
-     <Button variant="info">remove</Button></div> 
+     <Button variant="info" onClick={removehandler}>remove</Button></div> 
      
      </div>
 
