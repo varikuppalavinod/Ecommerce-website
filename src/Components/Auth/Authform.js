@@ -52,7 +52,8 @@
           }).then(data=>{
            // setisLoading(false)        choice
            // console.log(data)
-            cartctx.login(data.idToken)
+           const Email=enteredemail.replace("@","").replace(".","")
+            cartctx.login(data.idToken,Email)
             navigate("/")
           }).catch(error=>{
             alert(error.message)
